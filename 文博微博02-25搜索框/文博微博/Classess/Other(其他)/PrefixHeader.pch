@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  文博微博
+//
+//  Created by 胡文博 on 2018/2/24.
+//  Copyright © 2018年 胡文博. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+    #import "UIView+WBFrame.h"
+    #import "UIBarButtonItem+WBCreate.h"
+    #import "UIImage+WBExtension.h"
+
+    // 判断是是iOS7系统以上
+    #define iOS7 ([[UIDevice currentDevice].systemVersion floatValue])
+
+    // 在发布状态下，打印失效
+    #ifdef DEBUG
+    #define WBLog(...) NSLog(__VA_ARGS__)
+    #else
+    #define WBLog(...)
+    #endif
+
+    // navigation主题的字体
+    #define WBNavigationThemeFont [UIFont boldSystemFontOfSize:20]
+    // navigation主题字体的颜色
+    #define WBNavigatoinThemeColor [UIColor blackColor]
+
+#endif /* PrefixHeader_pch */
+
+
