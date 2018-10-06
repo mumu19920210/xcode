@@ -55,7 +55,8 @@
     [self setupUserInfo];
     
     // 获取未读微博数
-    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(noReadStatuscCount) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(noReadStatuscCount) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 // 获取未读微博数
@@ -67,6 +68,8 @@
     [WBStatusTool noReadStatusWithPatams:params success:^(WBNoReadStatusResult * _Nonnull result) {
        
         self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.status];
+        
+        [UIApplication sharedApplication].applicationIconBadgeNumber = result.status;
         
     } failure:^(NSError * _Nonnull error) {
         self.tabBarItem.badgeValue = @"我读错了";
@@ -88,7 +91,7 @@
     params.uid = [WBAccountTool account].uid;
     
     [WBUserTool userInfoWithPatams:params success:^(WBUserInfoResult * _Nonnull result) {
-//             screen_name是用户昵称
+        // screen_name是用户昵称
         NSString *screen_name = result.screen_name;
         [self.titleBtn setTitle:screen_name forState:UIControlStateNormal];
         [self.titleBtn setTitle:screen_name forState:UIControlStateHighlighted];
@@ -333,6 +336,23 @@
         // 让刷新控件停止刷新（恢复默认的状态）
         [self.footerView stop];
     }];
+}
+
+#pragma mark - 内部方法
+- (void)pullToTop
+{
+    NSIndexPath *firstRowPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView scrollToRowAtIndexPath:firstRowPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+//    [self.tableView setContentOffset:CGPointMake(0, -64) animated:YES];
+    
+    if (self.tabBarItem.badgeValue.integerValue > 0) {
+        // 刷新数据
+        self.tabBarItem.badgeValue = nil;
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        [self.refreshControl beginRefreshing];
+        [self refreshAllStatuses];
+    }
 }
 
 #pragma mark - WBMenuViewDelegate
