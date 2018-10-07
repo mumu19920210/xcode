@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WBFooterViewFrame;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WBFooterView : UIView
-
+/** WBFooterViewFrame */
+@property (nonatomic, strong) WBFooterViewFrame *footerViewFrame;
 @end
 
 NS_ASSUME_NONNULL_END

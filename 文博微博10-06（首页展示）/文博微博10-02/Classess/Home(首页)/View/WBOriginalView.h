@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WBOriginalView : UIView
 /** WBStatusFrame */
 @property (nonatomic, strong) WBOriginalViewFrame *originalViewFrame;
-
-
 @end
 
 NS_ASSUME_NONNULL_END

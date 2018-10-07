@@ -18,6 +18,7 @@
 #import "WBUserTool.h"
 #import "WBStatusTableViewCell.h"
 #import "WBStatusFrame.h"
+#import "WBFooterViewFrame.h"
 
 @interface WBHomeViewController () <WBMenuViewDelegate>
 
@@ -397,15 +398,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WBStatusFrame *statusFrame = self.statusFrames[indexPath.row];
-    return CGRectGetMaxY(statusFrame.foolterViewFrame);
+    CGFloat tableViewCellHeight = CGRectGetMaxY(statusFrame.foolterViewFrame.frame);
+    return tableViewCellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     WBStatusTableViewCell *cell = [WBStatusTableViewCell cellWithTabelView:tableView];
-    
     WBStatusFrame *statusFrame = self.statusFrames[indexPath.row];
-    
     cell.statusFrame = statusFrame;
     
     return cell;

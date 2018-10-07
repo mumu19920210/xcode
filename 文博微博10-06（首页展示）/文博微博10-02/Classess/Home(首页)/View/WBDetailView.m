@@ -44,18 +44,10 @@
 {
     _detailViewFrame = detailViewFrame;
     
-//    WBOriginalViewFrame *originalViewFrame = [[WBOriginalViewFrame alloc] init];
-//    originalViewFrame.status = detailViewFrame.status;
-//    _detailViewFrame.originalViewFrame = originalViewFrame;
-//
-//    WBRetWeetedFrame *retweetedFrame = [[WBRetWeetedFrame alloc] init];
-//    retweetedFrame.retWeetedStatus = _detailViewFrame.status.retweeted_status;
-//    _detailViewFrame.retWeetedViewFrame = retweetedFrame;
-    
-    NSLog(@"%@", _detailViewFrame);
-    
     self.originalView.originalViewFrame = _detailViewFrame.originalViewFrame;
     self.retWeetedView.retWeetedFrame = _detailViewFrame.retWeetedViewFrame;
+    
+    self.frame = _detailViewFrame.originalViewFrame.frame;
 }
 
 @end

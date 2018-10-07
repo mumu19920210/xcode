@@ -9,6 +9,8 @@
 #import "WBStatusTableViewCell.h"
 #import "WBDetailView.h"
 #import "WBFooterView.h"
+#import "WBFooterViewFrame.h"
+#import "WBStatusFrame.h"
 
 @interface WBStatusTableViewCell()
 @property (nonatomic, weak) WBDetailView *detailView;
@@ -49,6 +51,7 @@
     _statusFrame = statusFrame;
     
     self.detailView.detailViewFrame = _statusFrame;
+    self.footerView.footerViewFrame = _statusFrame.foolterViewFrame;
 }
 
 @end

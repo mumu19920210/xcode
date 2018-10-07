@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class WBStatus, WBOriginalViewFrame, WBRetWeetedFrame;
+@class WBStatus, WBOriginalViewFrame, WBRetWeetedFrame, WBFooterViewFrame;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** WBStatus */
 @property (nonatomic, strong) WBStatus *status;
 /** FoolterViewFrame */
-@property (nonatomic, assign) CGRect foolterViewFrame;
+@property (nonatomic, strong) WBFooterViewFrame *foolterViewFrame;
 /** OriginalViewFrame */
 @property (nonatomic, strong) WBOriginalViewFrame *originalViewFrame;
 /** RetWeetedViewFrame */

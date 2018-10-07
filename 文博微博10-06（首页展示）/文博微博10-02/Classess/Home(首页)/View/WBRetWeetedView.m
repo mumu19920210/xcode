@@ -21,6 +21,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self setupContentView];
+        self.backgroundColor = [UIColor lightGrayColor];
     }
     
     return self;
@@ -30,11 +31,16 @@
 {
     // 1. 转发人
     UIButton *nameBtn = [[UIButton alloc] init];
+    nameBtn.titleLabel.font = WBHomeStatusNameLabelFont;
+    [nameBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [nameBtn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     self.nameBtn = nameBtn;
     [self addSubview:nameBtn];
     
     // 2. 转发内容
     UILabel *retWeetedTextLabel = [[UILabel alloc] init];
+    retWeetedTextLabel.font = WBHomeStatusTextLabelFont;
+    retWeetedTextLabel.numberOfLines = 0;
     self.retWeetedTextLabel = retWeetedTextLabel;
     [self addSubview:retWeetedTextLabel];
 }

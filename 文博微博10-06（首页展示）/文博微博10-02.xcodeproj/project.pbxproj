@@ -109,6 +109,7 @@
 		8EC5A76D2167894B005749FF /* WBStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5A76C2167894B005749FF /* WBStatusFrame.m */; };
 		8EC5A77021678D09005749FF /* WBOriginalViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5A76F21678D09005749FF /* WBOriginalViewFrame.m */; };
 		8EC5A77321678D80005749FF /* WBRetWeetedFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5A77221678D80005749FF /* WBRetWeetedFrame.m */; };
+		8EC5A77621699EAD005749FF /* WBFooterViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5A77521699EAD005749FF /* WBFooterViewFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -314,6 +315,8 @@
 		8EC5A76F21678D09005749FF /* WBOriginalViewFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOriginalViewFrame.m; sourceTree = "<group>"; };
 		8EC5A77121678D80005749FF /* WBRetWeetedFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBRetWeetedFrame.h; sourceTree = "<group>"; };
 		8EC5A77221678D80005749FF /* WBRetWeetedFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBRetWeetedFrame.m; sourceTree = "<group>"; };
+		8EC5A77421699EAD005749FF /* WBFooterViewFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBFooterViewFrame.h; sourceTree = "<group>"; };
+		8EC5A77521699EAD005749FF /* WBFooterViewFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBFooterViewFrame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +403,8 @@
 				8EC5A76F21678D09005749FF /* WBOriginalViewFrame.m */,
 				8EC5A77121678D80005749FF /* WBRetWeetedFrame.h */,
 				8EC5A77221678D80005749FF /* WBRetWeetedFrame.m */,
+				8EC5A77421699EAD005749FF /* WBFooterViewFrame.h */,
+				8EC5A77521699EAD005749FF /* WBFooterViewFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -997,6 +1002,7 @@
 				8E983A41216388D800137A11 /* SDAnimatedImageRep.m in Sources */,
 				8E983A942166777700137A11 /* WBNetworkingTool.m in Sources */,
 				8E983A2E216388D800137A11 /* AFSecurityPolicy.m in Sources */,
+				8EC5A77621699EAD005749FF /* WBFooterViewFrame.m in Sources */,
 				8E983A852166593800137A11 /* WBUserInfoResult.m in Sources */,
 				8E983A36216388D800137A11 /* SDWebImageFrame.m in Sources */,
 				8E983A00216388D800137A11 /* WBStatus.m in Sources */,

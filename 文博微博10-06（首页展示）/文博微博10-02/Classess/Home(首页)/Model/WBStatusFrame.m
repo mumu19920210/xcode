@@ -10,6 +10,7 @@
 #import "WBStatus.h"
 #import "WBOriginalViewFrame.h"
 #import "WBRetWeetedFrame.h"
+#import "WBFooterViewFrame.h"
 
 @implementation WBStatusFrame
 
@@ -30,27 +31,27 @@
     self.retWeetedViewFrame = [[WBRetWeetedFrame alloc] init];
     self.retWeetedViewFrame.retWeetedStatus = _status.retweeted_status;
     
-    // 3. footViewFrame
-    CGFloat footViewX = kHomeStatusCellMargin;
-    CGFloat footViewY = kHomeStatusCellMargin;
-    CGFloat footViewW = kScreenWidth - 2 * kHomeStatusCellMargin;
-    CGFloat footViewH = 0;
+    // 3 retweeted自己的frame
+    CGRect retweetedFrame = _retWeetedViewFrame.frame;
+    CGFloat retweetedY = retweetedFrame.origin.y;
     if (self.status.retweeted_status) {
-        // 3.1 retweeted自己的frame
-        CGSize maxSize = CGSizeMake(footViewW, MAXFLOAT);
-        CGRect adjustStatusTextRect = [self.status.retweeted_status.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: WBHomeStatusNameLabelFont} context:nil];
-        
-        CGFloat reweetedViewX = kHomeStatusCellMargin;
-        CGFloat reweetedViewY = CGRectGetMaxY(_originalViewFrame.frame) + kHomeStatusCellMargin;
-        CGFloat reweetedViewW = adjustStatusTextRect.size.width;
-        CGFloat reweetedViewH = adjustStatusTextRect.size.height;
-        self.retWeetedViewFrame.frame = CGRectMake(reweetedViewX, reweetedViewY, reweetedViewW, reweetedViewH);
-        
-        footViewH = adjustStatusTextRect.size.height;
+        retweetedY += CGRectGetMaxY(_originalViewFrame.frame);
+        retweetedFrame.origin.y = retweetedY;
+        _retWeetedViewFrame.frame = retweetedFrame;
     }
     
-    footViewY += footViewH;
-    _foolterViewFrame = CGRectMake(footViewX, footViewY, footViewW, footViewH);
+    // 4. footViewFrame
+    CGFloat footViewX = kHomeStatusCellMargin;
+    CGFloat footViewH = 40;
+    CGFloat footViewW = kScreenWidth - 2 * kHomeStatusCellMargin;
+    CGFloat footViewY = CGRectGetMaxY(_originalViewFrame.textFrame) + kHomeStatusCellMargin;
+    if (self.status.retweeted_status) {
+        footViewY = CGRectGetMaxY(_retWeetedViewFrame.frame) + kHomeStatusCellMargin;
+    }
+    
+    _foolterViewFrame = [[WBFooterViewFrame alloc] init];
+    _foolterViewFrame.footerViewStatus = _status;
+    _foolterViewFrame.frame = CGRectMake(footViewX, footViewY, footViewW, footViewH);
 }
 
 @end

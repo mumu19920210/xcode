@@ -15,10 +15,9 @@
     _originalStastus = originalStastus;
     
     // 1. iconFrame
-    UIImage *img = [UIImage imageNamed:_originalStastus.user.profile_image_url];
     CGFloat iconX = kHomeStatusCellMargin;
     CGFloat iconY = iconX;
-    CGFloat iconW = img.size.width;
+    CGFloat iconW = 35;
     CGFloat iconH = iconW;
     _iconFrame = CGRectMake(iconX, iconY, iconW, iconH);
     
@@ -28,6 +27,7 @@
     CGFloat nameW = [_originalStastus.user.name sizeWithAttributes: @{NSFontAttributeName: WBHomeStatusNameLabelFont}].width;
     CGFloat nameH = [_originalStastus.user.name sizeWithAttributes: @{NSFontAttributeName: WBHomeStatusNameLabelFont}].height;
     _nameFrame = CGRectMake(nameX, nameY, nameW, nameH);
+    
     // 3. timeFrame
     CGFloat timeX = nameX;
     CGFloat timeY = CGRectGetMaxY(_nameFrame) + kHomeStatusCellMargin;
@@ -44,16 +44,18 @@
     
     // 5. textFrame
     CGFloat textX = iconX;
-    CGFloat textY = CGRectGetMaxY(_nameFrame) + kHomeStatusCellMargin;
-    CGFloat textW = [_originalStastus.text sizeWithAttributes: @{NSFontAttributeName: WBHomeStatusTimeLabelFont}].width;
-    CGFloat textH = [_originalStastus.text sizeWithAttributes: @{NSFontAttributeName: WBHomeStatusTimeLabelFont}].height;
-    _timeFrame = CGRectMake(textX, textY, textW, textH);
+    CGFloat textY = CGRectGetMaxY(_timeFrame) + kHomeStatusCellMargin;
+    CGSize maxSize = CGSizeMake(kScreenWidth - 2 * kHomeStatusCellMargin, MAXFLOAT);
+    CGSize textSize = [_originalStastus.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: WBHomeStatusTimeLabelFont} context:nil].size;
+    CGFloat textW = textSize.width;
+    CGFloat textH = textSize.height;
+    _textFrame = CGRectMake(textX, textY, textW, textH);
     
     // 6. self.frame
     CGFloat x = 0;
-    CGFloat y = CGRectGetMaxY(self.textFrame) + kHomeStatusCellMargin;
+    CGFloat y = 0;
     CGFloat w = kScreenWidth;
-    CGFloat h = 40;
+    CGFloat h = CGRectGetMaxY(self.textFrame) + kHomeStatusCellMargin;
     _frame = CGRectMake(x, y, w, h);
 }
 @end

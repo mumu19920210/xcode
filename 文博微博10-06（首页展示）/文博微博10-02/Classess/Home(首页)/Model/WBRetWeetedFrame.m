@@ -25,10 +25,21 @@
     // 2. retWeetedTextLabelFrame
     CGFloat retWeetedTextLabelX = nameBtnX;
     CGFloat retWeetedTextLabelY = CGRectGetMaxY(_nameBtnFrame) + kHomeStatusCellMargin;
+    
     CGSize maxSize = CGSizeMake(kScreenWidth - 2 * kHomeStatusCellMargin, MAXFLOAT);
     CGRect adjustStatusTextRect = [retWeetedStatus.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: WBHomeStatusNameLabelFont} context:nil];
     CGFloat retWeetedTextLabelW = adjustStatusTextRect.size.width;
     CGFloat retWeetedTextLabelH = adjustStatusTextRect.size.height;
-    _retWeetedTextLabelFrame = CGRectMake(retWeetedTextLabelX, retWeetedTextLabelY, retWeetedTextLabelW, retWeetedTextLabelH);}
+    
+    _retWeetedTextLabelFrame = CGRectMake(retWeetedTextLabelX, retWeetedTextLabelY, retWeetedTextLabelW, retWeetedTextLabelH);
+    
+    // 3. frame
+    CGFloat x = 0;
+    CGFloat y = 0;
+    CGFloat w = kScreenWidth;
+    CGFloat h = CGRectGetMaxY(_retWeetedTextLabelFrame) + kHomeStatusCellMargin;
+    if (!retWeetedStatus) h = 0;
+    _frame = CGRectMake(x, y, w, h);
+}
 
 @end
