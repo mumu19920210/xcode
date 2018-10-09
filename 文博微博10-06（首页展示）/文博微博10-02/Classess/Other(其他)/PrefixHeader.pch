@@ -30,11 +30,17 @@
 
 #pragma mark - 首页微博中的简单配置
 #define WBHomeStatusNameLabelFont [UIFont systemFontOfSize:15]
-#define WBHomeStatusTimeLabelFont [UIFont systemFontOfSize:15]
-#define WBHomeStatusSourceLabelFont [UIFont systemFontOfSize:15]
-#define WBHomeStatusTextLabelFont [UIFont systemFontOfSize:15]
+#define WBHomeStatusTimeLabelFont [UIFont systemFontOfSize:13]
+#define WBHomeStatusSourceLabelFont [UIFont systemFontOfSize:13]
+#define WBHomeStatusTextLabelFont [UIFont systemFontOfSize:16]
 
 #define kHomeStatusCellMargin 10
+#define kHomeStatusCellVerb 10 // cell之间的间隔
+
+#define WBHomeStatusRetWeetCommentUlikeBtnLabelFont [UIFont systemFontOfSize:15]
+
+#define WBHomeStatusSourceLabelColor [UIColor lightGrayColor]
+#define WBHomeStatusTimeLabelColor [UIColor orangeColor]
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height

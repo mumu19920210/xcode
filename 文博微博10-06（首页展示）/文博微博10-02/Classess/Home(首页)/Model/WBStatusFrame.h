@@ -7,19 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-@class WBStatus, WBOriginalViewFrame, WBRetWeetedFrame, WBFooterViewFrame;
+@class WBStatus, WBDetailViewFrame, WBFooterViewFrame;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WBStatusFrame : NSObject
 /** WBStatus */
 @property (nonatomic, strong) WBStatus *status;
+/** WBDetailViewFrame */
+@property (nonatomic, strong) WBDetailViewFrame *detailViewFrame;
 /** FoolterViewFrame */
 @property (nonatomic, strong) WBFooterViewFrame *foolterViewFrame;
-/** OriginalViewFrame */
-@property (nonatomic, strong) WBOriginalViewFrame *originalViewFrame;
-/** RetWeetedViewFrame */
-@property (nonatomic, strong) WBRetWeetedFrame *retWeetedViewFrame;
 @end
 
 NS_ASSUME_NONNULL_END

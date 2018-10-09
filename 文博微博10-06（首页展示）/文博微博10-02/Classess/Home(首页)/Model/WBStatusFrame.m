@@ -8,6 +8,7 @@
 
 #import "WBStatusFrame.h"
 #import "WBStatus.h"
+#import "WBDetailViewFrame.h"
 #import "WBOriginalViewFrame.h"
 #import "WBRetWeetedFrame.h"
 #import "WBFooterViewFrame.h"
@@ -23,35 +24,16 @@
 
 - (void)setupCellFrame
 {
-    // 1. originalViewFrame
-    self.originalViewFrame = [[WBOriginalViewFrame alloc] init];
-    self.originalViewFrame.originalStastus = _status;
+    // 1. 设置微博数据
+    self.detailViewFrame = [[WBDetailViewFrame alloc] init];
+    self.detailViewFrame.detailViewStatus = _status;
     
-    // 2. retWeetedViewFrame
-    self.retWeetedViewFrame = [[WBRetWeetedFrame alloc] init];
-    self.retWeetedViewFrame.retWeetedStatus = _status.retweeted_status;
-    
-    // 3 retweeted自己的frame
-    CGRect retweetedFrame = _retWeetedViewFrame.frame;
-    CGFloat retweetedY = retweetedFrame.origin.y;
-    if (self.status.retweeted_status) {
-        retweetedY += CGRectGetMaxY(_originalViewFrame.frame);
-        retweetedFrame.origin.y = retweetedY;
-        _retWeetedViewFrame.frame = retweetedFrame;
-    }
-    
-    // 4. footViewFrame
-    CGFloat footViewX = kHomeStatusCellMargin;
-    CGFloat footViewH = 40;
-    CGFloat footViewW = kScreenWidth - 2 * kHomeStatusCellMargin;
-    CGFloat footViewY = CGRectGetMaxY(_originalViewFrame.textFrame) + kHomeStatusCellMargin;
-    if (self.status.retweeted_status) {
-        footViewY = CGRectGetMaxY(_retWeetedViewFrame.frame) + kHomeStatusCellMargin;
-    }
-    
+    // 2. footViewFrame
     _foolterViewFrame = [[WBFooterViewFrame alloc] init];
+    CGFloat footViewY = CGRectGetMaxY(_detailViewFrame.frame);
+    _foolterViewFrame.footerViewY = footViewY;
+    
     _foolterViewFrame.footerViewStatus = _status;
-    _foolterViewFrame.frame = CGRectMake(footViewX, footViewY, footViewW, footViewH);
 }
 
 @end

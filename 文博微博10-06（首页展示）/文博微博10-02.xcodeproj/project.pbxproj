@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E0300F9216BB14200E0DB4B /* WBDetailViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0300F8216BB14200E0DB4B /* WBDetailViewFrame.m */; };
 		8E9839282163889700137A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9839272163889700137A11 /* Assets.xcassets */; };
 		8E9839FF216388D800137A11 /* WBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E983937216388D700137A11 /* WBHomeViewController.m */; };
 		8E983A00216388D800137A11 /* WBStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E98393A216388D700137A11 /* WBStatus.m */; };
@@ -113,6 +114,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E0300F7216BB14200E0DB4B /* WBDetailViewFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBDetailViewFrame.h; sourceTree = "<group>"; };
+		8E0300F8216BB14200E0DB4B /* WBDetailViewFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBDetailViewFrame.m; sourceTree = "<group>"; };
 		8E98391B2163889500137A11 /* 文博微博10-02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "文博微博10-02.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E9839272163889700137A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E98392C2163889700137A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -399,6 +402,8 @@
 				8E98393A216388D700137A11 /* WBStatus.m */,
 				8EC5A76B2167894B005749FF /* WBStatusFrame.h */,
 				8EC5A76C2167894B005749FF /* WBStatusFrame.m */,
+				8E0300F7216BB14200E0DB4B /* WBDetailViewFrame.h */,
+				8E0300F8216BB14200E0DB4B /* WBDetailViewFrame.m */,
 				8EC5A76E21678D09005749FF /* WBOriginalViewFrame.h */,
 				8EC5A76F21678D09005749FF /* WBOriginalViewFrame.m */,
 				8EC5A77121678D80005749FF /* WBRetWeetedFrame.h */,
@@ -423,12 +428,12 @@
 				8EC5A75D21676AF9005749FF /* WBStatusTableViewCell.m */,
 				8EC5A75F21676C2E005749FF /* WBDetailView.h */,
 				8EC5A76021676C2E005749FF /* WBDetailView.m */,
-				8EC5A76221676C38005749FF /* WBFooterView.h */,
-				8EC5A76321676C38005749FF /* WBFooterView.m */,
 				8EC5A76521676D3D005749FF /* WBOriginalView.h */,
 				8EC5A76621676D3D005749FF /* WBOriginalView.m */,
 				8EC5A76821676D48005749FF /* WBRetWeetedView.h */,
 				8EC5A76921676D48005749FF /* WBRetWeetedView.m */,
+				8EC5A76221676C38005749FF /* WBFooterView.h */,
+				8EC5A76321676C38005749FF /* WBFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -651,9 +656,9 @@
 			children = (
 				8E98397C216388D700137A11 /* UIBarButtonItem+WBCreate.h */,
 				8E98397D216388D700137A11 /* UIView+WBFrame.h */,
-				8E98397E216388D700137A11 /* UIImage+WBExtension.m */,
 				8E98397F216388D700137A11 /* UIBarButtonItem+WBCreate.m */,
 				8E983980216388D700137A11 /* Foundation+Log.m */,
+				8E98397E216388D700137A11 /* UIImage+WBExtension.m */,
 				8E983981216388D700137A11 /* UIImage+WBExtension.h */,
 				8E983982216388D700137A11 /* UIView+WBFrame.m */,
 			);
@@ -988,6 +993,7 @@
 				8E983A35216388D800137A11 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8E983A3F216388D800137A11 /* SDWebImageCoder.m in Sources */,
 				8E983A14216388D800137A11 /* WBComposeImageView.m in Sources */,
+				8E0300F9216BB14200E0DB4B /* WBDetailViewFrame.m in Sources */,
 				8E983A4A216388D800137A11 /* UIView+WebCacheOperation.m in Sources */,
 				8E983A542165F60200137A11 /* WBHttpTool.m in Sources */,
 				8EC5A76721676D3D005749FF /* WBOriginalView.m in Sources */,
@@ -1181,11 +1187,12 @@
 		8E9839322163889700137A11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W526E5FC8G;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/huwenbo/workspace/文博微博workspace/文博微博10-05（未读数显示）/文博微博10-02/Classess/Other(其他)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/huwenbo/workspace/文博微博workspace/文博微博10-06（首页展示）/文博微博10-02/Classess/Other(其他)/PrefixHeader.pch";
 				INFOPLIST_FILE = "文博微博10-02/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1193,7 +1200,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wenbo10-02.www";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}";
 			};
 			name = Debug;
@@ -1201,11 +1208,12 @@
 		8E9839332163889700137A11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W526E5FC8G;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/huwenbo/workspace/文博微博workspace/文博微博10-05（未读数显示）/文博微博10-02/Classess/Other(其他)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/huwenbo/workspace/文博微博workspace/文博微博10-06（首页展示）/文博微博10-02/Classess/Other(其他)/PrefixHeader.pch";
 				INFOPLIST_FILE = "文博微博10-02/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1213,7 +1221,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wenbo10-02.www";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${PODS_ROOT}";
 			};
 			name = Release;

@@ -263,6 +263,10 @@
      [self.navigationController.navigationBar setBackgroundImage:[self imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     // 设置半透明
     self.navigationController.navigationBar.translucent = YES;
+    // tableView不需要线条
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    // 设置tableView的颜色
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (UIImage *)imageWithColor:(UIColor *)color

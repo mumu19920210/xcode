@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WBFooterViewFrame : NSObject
 /** WBStatus */
 @property (nonatomic, strong) WBStatus *footerViewStatus;
+/** footerViewY */
+@property (nonatomic, assign) CGFloat footerViewY;
 /** self.frame */
 @property (nonatomic, assign) CGRect frame;
 @end

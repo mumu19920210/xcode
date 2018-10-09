@@ -26,8 +26,6 @@
 {
     if (self = [super initWithFrame:frame]) {
         
-//        self.backgroundColor = [UIColor grayColor];
-        
         // 1. iconimgView
         UIImageView *iconImgView = [[UIImageView alloc] init];
         [self addSubview:iconImgView];
@@ -42,12 +40,14 @@
         // 3. timeLabel
         UILabel *timeLabel = [[UILabel alloc] init];
         timeLabel.font = WBHomeStatusTimeLabelFont;
+        timeLabel.textColor = WBHomeStatusTimeLabelColor;
         [self addSubview:timeLabel];
         self.timeLabel = timeLabel;
         
         // 4. sourceLabel
         UILabel *sourceLabel = [[UILabel alloc] init];
         sourceLabel.font = WBHomeStatusSourceLabelFont;
+        sourceLabel.textColor = WBHomeStatusSourceLabelColor;
         [self addSubview:sourceLabel];
         self.sourceLabel = sourceLabel;
         

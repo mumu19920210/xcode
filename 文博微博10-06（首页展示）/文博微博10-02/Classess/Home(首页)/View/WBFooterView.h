@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WBFooterView : UIView
+@interface WBFooterView : UIImageView
 /** WBFooterViewFrame */
 @property (nonatomic, strong) WBFooterViewFrame *footerViewFrame;
 @end

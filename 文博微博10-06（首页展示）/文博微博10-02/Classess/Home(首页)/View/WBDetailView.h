@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class WBStatusFrame;
+@class WBDetailViewFrame;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WBDetailView : UIView
 /** WBStatusFrame */
-@property (nonatomic, strong) WBStatusFrame *detailViewFrame;
+@property (nonatomic, strong) WBDetailViewFrame *detailViewFrame;
 @end
 
 NS_ASSUME_NONNULL_END

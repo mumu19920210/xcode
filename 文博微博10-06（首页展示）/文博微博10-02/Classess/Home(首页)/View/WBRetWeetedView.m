@@ -21,7 +21,6 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self setupContentView];
-        self.backgroundColor = [UIColor lightGrayColor];
     }
     
     return self;
@@ -63,6 +62,11 @@
     
     // 3. self.frame
     self.frame = _retWeetedFrame.frame;
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    [[UIImage imageNamed:@"timeline_retweet_background"].remakeImage drawInRect:rect];
 }
 
 @end

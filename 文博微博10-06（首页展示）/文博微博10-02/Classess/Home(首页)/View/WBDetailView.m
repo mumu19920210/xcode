@@ -9,10 +9,9 @@
 #import "WBDetailView.h"
 #import "WBOriginalView.h"
 #import "WBRetWeetedView.h"
-#import "WBStatusFrame.h"
 #import "WBOriginalViewFrame.h"
 #import "WBRetWeetedFrame.h"
-#import "WBStatus.h"
+#import "WBDetailViewFrame.h"
 
 @interface WBDetailView()
 
@@ -28,6 +27,7 @@
     self = [super initWithFrame:frame];
     if (!self) return nil;
     
+    self.backgroundColor = [UIColor whiteColor];
     // 1. 原创微博
     WBOriginalView *originalView = [[WBOriginalView alloc] init];
     [self addSubview:originalView];
@@ -40,14 +40,17 @@
     return self;
 }
 
-- (void)setDetailViewFrame:(WBStatusFrame *)detailViewFrame
+- (void)setDetailViewFrame:(WBDetailViewFrame *)detailViewFrame
 {
     _detailViewFrame = detailViewFrame;
     
     self.originalView.originalViewFrame = _detailViewFrame.originalViewFrame;
     self.retWeetedView.retWeetedFrame = _detailViewFrame.retWeetedViewFrame;
     
-    self.frame = _detailViewFrame.originalViewFrame.frame;
+    self.frame = _detailViewFrame.frame;
+    
+    // 设置frame时，调用drawRect方法
+    [self.retWeetedView setNeedsDisplay];
 }
 
 @end

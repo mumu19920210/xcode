@@ -26,6 +26,7 @@
     WBStatusTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:statusTableViewcellID];
     if (!cell) {
         cell = [[WBStatusTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:statusTableViewcellID];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
@@ -33,6 +34,8 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (!(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) return nil;
+    
+    self.backgroundColor = [UIColor clearColor];
     
     // 1. 内容
     WBDetailView *detailView = [[WBDetailView alloc] init];
@@ -50,7 +53,7 @@
 {
     _statusFrame = statusFrame;
     
-    self.detailView.detailViewFrame = _statusFrame;
+    self.detailView.detailViewFrame = _statusFrame.detailViewFrame;
     self.footerView.footerViewFrame = _statusFrame.foolterViewFrame;
 }
 

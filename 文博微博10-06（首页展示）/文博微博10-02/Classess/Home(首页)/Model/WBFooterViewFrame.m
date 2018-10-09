@@ -14,6 +14,9 @@
 {
     _footerViewStatus = footerViewStatus;
     
-    
+    CGFloat footViewX = 0;
+    CGFloat footViewH = 35;
+    CGFloat footViewW = kScreenWidth;
+    self.frame = CGRectMake(footViewX, _footerViewY, footViewW, footViewH);
 }
 @end
